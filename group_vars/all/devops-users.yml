@@ -1,0 +1,13 @@
+devops:
+  mrmagoo:
+    username: mrmagoo
+    key: "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAgc/oBAviiCH0BsD4obL/mDQ9fLGOFpIwB4VCQUe7EpkCOdsLUezB0yykRubuCadNQbAem35effxA26dWFF1K6fQ9eDrl+fivUMM3rwAMIBLuh0XlbPhcj6dD3OgKRgYGx5XL8RVpZpnaoTztsQq1YzOWk5kR16zgfhaCmsNJl9JDc+aLdXAcykHJys="
+    shell: /bin/bash
+    comment: mrmagoo@mail.com
+    state: present
+  bigpoppapump:
+    username: bigpoppapump
+    key: "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQuh0XlbPhcj6dD3OgKRgYESgcr7FRrGJl9Jx5XL8RVpZpnaoTztsQq1YzOWk5kR16zgfhaCmsNJl9JDc+aLdXAcykHJuh0XlbPhcj6dD3OgKRgYGx5XL8RVpZpnaoTztsQq1YzOWk5kR16zgfhaCmsNJl9JDc+aLdXAcykHJXESgcr7FRrQeSPmcD55md6hw== bigpoppapump"
+    shell: /bin/bash
+    comment: bigpoppapump@mail.com
+    state: present

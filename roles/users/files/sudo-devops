@@ -1,0 +1,2 @@
+#create the devops sudo file
+%devops ALL=(ALL) NOPASSWD: LOG_INPUT: ALL

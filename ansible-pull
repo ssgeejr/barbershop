@@ -1,0 +1,2 @@
+# Cron job to git clone/pull a repo and then run locally
+*/15 * * * * root ansible-pull -o -d /etc/ansible/barbershop -U https://github.com/ssgeejr/barbershop.git >> /var/log/ansible-pull.log 2>&1

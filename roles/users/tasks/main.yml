@@ -1,0 +1,28 @@
+- name: Create devops group
+  group: name=devops
+  
+- name: Create docker group
+  group: name=docker
+
+- name: Copy the sudo-devops files over tot he server
+  copy: src=sudo-devops
+        dest=/etc/sudoers.d/sudo-devops
+        mode=0400
+
+- name: Add the devops users to the server
+  user: user={{item.value.username}} shell={{item.value.shell}} comment={{item.value.comment}} state={{item.value.state}} createhome=yes groups=devops,docker append=yes
+  with_dict: devops
+
+- name: Push devops user pub keys to authorized_keys
+  authorized_key: user="{{item.value.username}}" key="{{item.value.key}}"
+  with_dict: devops
+
+- name: Add the docker users to the server
+  user: user={{item.value.username}} shell={{item.value.shell}} comment={{item.value.comment}} state={{item.value.state}} createhome=yes groups=docker append=yes
+  with_dict: docker
+
+- name: Push docker user pub keys to authorized_keys
+  authorized_key: user="{{item.value.username}}" key="{{item.value.key}}"
+  with_dict: docker
+  
+  

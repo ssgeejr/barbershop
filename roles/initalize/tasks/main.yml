@@ -1,0 +1,5 @@
+---
+# Place holder for Initialize Tasks Role
+- name: Show message for initialization
+  debug: msg="---- THIS WILL INITIALIZE THE PLATFORM FOR CORE USAGE ----"
+

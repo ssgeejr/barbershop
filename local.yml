@@ -1,0 +1,15 @@
+---
+- hosts: localhost 
+  connection: local
+  user: root 
+
+  vars:
+    init: false
+  
+#  vars_files:
+#    - roles/vars/devops-users.yml
+#    - roles/vars/java.yml
+
+  roles:
+    - { role: initalize, when: init }
+    - users

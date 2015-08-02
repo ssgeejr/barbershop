@@ -1,0 +1,9 @@
+# Default ansible 'hosts' file [/etc/ansible/hosts]
+localhost ansible_connection=local
+
+#[example-group]
+#192.168.1.1 ansible_connection=ssh ansible_ssh_user={{SOME_USER}} ansible_ssh_pass={{SOME_PASSWD}}
+
+[aws-docker]
+192.168.1.1
+

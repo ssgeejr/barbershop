@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# ########### CREATE THE NEW USER ###########
+adduser devops
+cd /home/devops
+mkdir .ssh
+
+cat << EOF > /home/devops/.ssh/config
+Host github.com
+	User git
+    IdentityFile ~/.ssh/devops
+EOF
+
+cat << EOF > /home/devops/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCCZcxratnYszQmvOGCSfYoXfIzbHgYMDl/LMQweepyM39I8Pp/6cYQZLD11Vl8dErUzkB55JTOIEcBzax22BRem2CxPrK8J0g7r5Id9pF+YfaR4z4YCMiUvzUxned4cohjZcxratnYszQmvOGCSfYoXfIzbHgYMDl/LMQweepyM39I8Pp/6cYQZLD11Vl8dErUzkB55JTPU6qVEtalxrRaMSesc7E+bdlp63OsUdNASv7oRXO1ieGSUtmNBdnjtp8ZcxratnYszQmvOGCSfYoXfIzbHgYMDl/LMQweepyM39I8Pp/6cYQZLD11Vl8dErUzkB55JTIO3v9o7Fg+ devops
+EOF
+
+chmod 600 /home/devops/.ssh/authorized_keys
+chmod 600 /home/devops/.ssh/config
+chmod 700 /home/devops/.ssh
+
+chown -R devops:devops /home/devops/.ssh
+
+# ########### CREATE THE DEVOPS GROUP AND ADD USERS ###########
+
+#groupadd devops
+#usermod -a -G devops devops
+
+echo "%devops ALL=(ALL) NOPASSWD: LOG_INPUT: ALL"  > /etc/sudoers.d/scm-devops
+

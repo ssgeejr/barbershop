@@ -1,0 +1,16 @@
+---
+# Place holder for JAVA Tasks Role
+  - name: Download Java
+    command: 'wget-c -O {{java_archive}} --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" {{jdk_url}}' 
+
+  - name: Extract Java archive
+    command: "tar -xzf {{java_archive}} -C {{target_folder}} creates={{java_dir}}"
+ 
+  - name: Fix ownership 
+    file: "state=directory path={{java_dir}} owner=root group=root recurse=yes"
+ 
+  - name: Make Java available for system
+    alternatives: name=java link=/usr/bin/java path={{java_dir}}/bin/java
+ 
+  - name: Make Javac available for system
+    alternatives: name=javac link=/usr/bin/javac path={{java_dir}}/bin/javac

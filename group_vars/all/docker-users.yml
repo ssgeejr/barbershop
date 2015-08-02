@@ -1,0 +1,7 @@
+docker:
+  bugsbunny:
+    username: bugsbunny
+    key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+txR+5e9//+epXH/ZlYwO0clanp05GUdde8tWalfnGFrbKanGFrbKauvGFTjxegGAtGUdde8tWalfuvGFTjxegGAt1StTaZkHfN71REao63njzg9ec48GF+rpRP8DtGUdde8tWalfuvGFTjxegGAtMnGFrbKa7O8LlJ7DI2XdgQsrSpZRn bugsbunny"
+    shell: /bin/bash
+    comment: bugsbunny@mail.com
+    state: present
